@@ -12,6 +12,11 @@ h1 {
     border: 2px solid black;
 }
 
+h2 {
+    text-transform: uppercase;
+    color: rgb(224, 92, 66);
+}
+
 .text-center {
     text-align: center;
 }
