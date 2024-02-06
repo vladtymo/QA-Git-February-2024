@@ -1,1 +1,3 @@
-# QA-Git-February-2024
+# Git Tutorial for QA Group
+
+### February 2024
