@@ -5,6 +5,53 @@
     <title>Push</title>
 </head>
 <body>
+<h1>Push Command</h1>
+
+<h2>Name</h2>
+<p>git-push - Update remote refs along with associated objects</p>
+
+<h2>DESCRIPTION</h2>
+<p>
+    Updates remote refs using local refs, while sending objects necessary to complete the given refs.
+
+    You can make interesting things happen to a repository every time you push into it, by setting up hooks there.
+    See documentation for git-receive-pack[1].
+
+    When the command line does not specify where to push with the <code>repository</code> argument,
+    <code>branch.*.remote</code> configuration for the current branch is consulted to determine where to push.
+    If the configuration is missing, it defaults to origin.
+
+    When the command line does not specify what to push with <code>refspec...</code> arguments or <code>--all</code>,
+    <code>--mirror</code>,<code>--tags</code>  options,
+    the command finds the default <code>refspec</code> by consulting <code>remote.*.push</code> configuration,
+    and if it is not found, honors push.default configuration to decide what to push
+    (See <a href="https://git-scm.com/docs/git-config">git-config[1]</a> for the meaning of <code>push.default</code>).
+
+        When neither the command-line nor the configuration specifies what to push, the default behavior is used,
+    which corresponds to the <code>simple</code> value for <code>push.default</code>: the current branch is pushed
+    to the corresponding upstream branch,
+    but as a safety measure, the push is aborted if the upstream branch does not have the same name as the local one.
+</p>
+<h2>OPTIONS</h2>
+<p>
+    <code>repository</code><br>
+    The "remote" repository that is the destination of a push operation. This parameter can be either a URL
+    (see the section <a href="#">GIT URLS</a> below)
+    or the name of a remote (see the section <a href="#">REMOTES</a> below).<br>
+    <code>refspec...</code><br>
+    Specify what destination ref to update with what source object. The format of a <code>refspec</code> parameter is an
+    optional plus <code>+</code>, followed by the source object <code>src</code>, followed by a colon :,
+    followed by the destination ref <code>dst</code>.
+</p>
+<ul>
+    <li>If <code>dst</code> unambiguously refers to a ref on the <code>repository</code> remote, then push to that ref.</li>
+    <li>If <code>src</code> resolves to a ref starting with refs/heads/ or refs/tags/, then prepend that to <code>dst</code>.</li>
+    <li>Other ambiguity resolutions might be added in the future, but for now any other cases will error out with an error
+        indicating what we tried, and depending on the <code>advice.pushUnqualifiedRefname</code> configuration
+        (<a href="https://git-scm.com/docs/git-config">see git-config[1]</a>)
+        suggest what refs/ namespace you may have wanted to push to.</li>
+</ul>
+
 
 </body>
 </html>
