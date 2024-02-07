@@ -1,22 +1,36 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    line-height: 1.4;
 }
 
 h1 {
-    background-color: rgb(224, 92, 66);
-    color: white;
+    color:  rgb(46, 37, 34);
     text-align: center;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 5px;
     text-transform: uppercase;
-    border: 2px solid black;
-}
+    font-style: oblique;
+    text-shadow: 2px 1px rgb(180, 83, 83);
+    font-size: 60px;
+    }
 
 h2 {
     text-transform: uppercase;
+    text-decoration: underline;
     color: rgb(224, 92, 66);
 }
 
 .text-center {
     text-align: center;
 }
+strong {
+    color:  rgb(29, 25, 24);
+    padding: 5px;
+    text-transform: uppercase;
+    font-style: oblique;
+}
+em {
+    color:  rgb(223, 18, 18);
+    padding: 5px;
+}
+
