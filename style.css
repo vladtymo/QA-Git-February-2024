@@ -17,6 +17,16 @@ h2 {
     color: rgb(224, 92, 66);
 }
 
+a {
+    text-decoration: none;
+}
+
+code {
+    color: rgb(224, 92, 66);
+    padding: 10px;
+    font-size: 15px;
+}
+
 .text-center {
     text-align: center;
 }
